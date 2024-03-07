@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+*{
+}
+
+:root {
+    --young-serif: 'Young Serif', sans-serif;
+    --outfit: 'Outfit', sans-serif;
+    --container-background-color: hsl(30, 54%, 90%);
+    --main-background-color: hsl(0, 0%, 100%); 
+    --prep-background-color: hsl(330, 100%, 98%);
+    --prep-h2-color: hsl(332, 51%, 32%);
+    --h2-color: hsl(14, 45%, 36%);
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 10fr auto;
+    place-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--container-background-color);
+}
+
+main {
+    height: 90vh;
+    width: 50vw;
+    display: grid;
+    grid-template-rows: auto 0.1fr auto auto auto;
+    padding: 1%;
+    background-color: var(--main-background-color);
+    border-radius: 12px;
+}
+
+main p {
+    font-size: 16px;
+}
+
+main h1{
+    font-size: 40px;
+}
+
+.header img{
+    width: 48vw;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.header p, .ingredients ul, .instructions ol, .footer table, .footer legend{
+    font-family: var(--outfit);
+}
+
+.prep {
+    font-family: var(--outfit);
+    background: var(--prep-background-color);
+    border-radius: 12px;
+    padding: 2%;
+    line-height: 1.5;
+}
+
+.prep h2, .prep ul{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h1 {
+    font-family: var(--young-serif);
+}
+
+h3, h4, h5 {
+    color: var(--h2-color);
+    font-family: var(--young-serif);
+    margin: 0;
+    font-size: 28px;
+}
+
+.prep h2 {
+    color: var(--prep-h2-color);
+}
+
+.ingredients, .instructions, .footer, .header{
+    padding: 2%;
+}
+
+.ingredients, .instructions {
+    border-bottom: 1px solid black;
+}
+
+.ingredients ul, .instructions ol, .prep ul{
+    padding: 3%;
+}
+
+@media screen and (max-width: 375px) {
+    .container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+    main {
+        height: 98%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
