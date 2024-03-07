@@ -24,15 +24,16 @@ body {
     display: grid;
     grid-template-rows: 10fr auto;
     place-items: center;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
+    height: 1955px;
     background-color: var(--container-background-color);
-    overflow: auto;
 }
 
 main {
     max-width: 700px;
     width: 90%;
+    height: 90%;
     display: grid;
     grid-template-rows: auto 0.1fr auto auto auto;
     padding: 2%;
