@@ -17,6 +17,7 @@ body {
     --prep-background-color: hsl(330, 100%, 98%);
     --prep-h2-color: hsl(332, 51%, 32%);
     --h2-color: hsl(14, 45%, 36%);
+    --border-color: hsl(30, 18%, 87%);
 }
 
 .container {
@@ -26,14 +27,15 @@ body {
     height: 100vh;
     width: 100vw;
     background-color: var(--container-background-color);
+    overflow: auto;
 }
 
 main {
-    height: 90vh;
-    width: 50vw;
+    max-width: 700px;
+    width: 90%;
     display: grid;
     grid-template-rows: auto 0.1fr auto auto auto;
-    padding: 1%;
+    padding: 2%;
     background-color: var(--main-background-color);
     border-radius: 12px;
 }
@@ -47,7 +49,8 @@ main h1{
 }
 
 .header img{
-    width: 48vw;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 12px;
 }
@@ -55,6 +58,19 @@ main h1{
 .header {
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+
+.header h1{
+    margin-bottom: 10px;
+}
+
+.header p{
+    margin-top: 0;
+}
+
+.prep span{
+    font-weight: 700;
 }
 
 .header p, .ingredients ul, .instructions ol, .footer table, .footer legend{
@@ -76,6 +92,7 @@ main h1{
 
 h1 {
     font-family: var(--young-serif);
+    font-weight: 400;
 }
 
 h3, h4, h5 {
@@ -83,10 +100,55 @@ h3, h4, h5 {
     font-family: var(--young-serif);
     margin: 0;
     font-size: 28px;
+    font-weight: 400;
 }
 
 .prep h2 {
     color: var(--prep-h2-color);
+}
+
+.ingredients {
+    display: flex;
+    flex-direction: column;
+  }
+
+.ingredients h3 {
+    margin-bottom: 0.5rem;
+  }
+
+.ingredients ul {
+    padding-left: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+.ingredients li {
+    margin-bottom: 0.5rem;
+  }
+
+.instructions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+  
+.instructions ol {
+    padding: 0;
+    margin: 0;
+    list-style-position: inside;
+}
+
+.instructions h4 {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+.instructions li {
+    margin-bottom: 15px;
+}
+
+.instructions span{
+    font-weight: 700;
 }
 
 .ingredients, .instructions, .footer, .header{
@@ -94,11 +156,43 @@ h3, h4, h5 {
 }
 
 .ingredients, .instructions {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .ingredients ul, .instructions ol, .prep ul{
     padding: 3%;
+}
+
+.footer {
+    text-align: left;
+}
+
+.footer h5 {
+    margin-bottom: 0.5rem;
+}
+
+.footer table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.footer th, .footer td {
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+.footer td:first-child {
+    text-align: left;
+}
+
+.footer table tr td:nth-child(2) {
+    font-weight: 900;
+    color: var(--h2-color);
+}
+
+.footer legend{
+    margin-bottom: 10px;
 }
 
 @media screen and (max-width: 375px) {
@@ -116,4 +210,16 @@ h3, h4, h5 {
         margin: 0;
         padding: 0;
     }
+    .header, .header img{
+       border-radius: 0;
+       margin: 0;
+       padding: 0;
+    }
+    .ingredients, .prep, .footer,.instructions {
+        margin: 4%;
+    }
+    .header h1, .header p {
+        margin: 4%;
+    }
 }
+
