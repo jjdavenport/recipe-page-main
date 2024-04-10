@@ -8,7 +8,7 @@ body {
   grid-template-rows: 1fr auto;
   background-color: var(--container-background-color);
   place-items: center;
-  height: 100vh;
+  height: 100%;
 }
 
 * {
@@ -42,6 +42,7 @@ main {
   background-color: var(--main-background-color);
   border-radius: 1.5rem;
   padding: 1.6rem;
+  margin-top: 8rem;
 }
 
 main p {
@@ -169,7 +170,7 @@ h5 {
 
 .ingredients,
 .instructions {
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 0.0625rem solid var(--border-color);
 }
 
 .ingredients ul,
